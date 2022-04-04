@@ -13,11 +13,6 @@ import PostsList from "./posts/PostsList.vue";
         components:{
             PostsList,
         },
-        data () {
-            return{
-
-            }
-        },
     };
 
 </script>
