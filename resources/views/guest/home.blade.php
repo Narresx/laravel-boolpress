@@ -89,7 +89,7 @@
         </div>
 
 
-        <div class="content">
+        <div class="content" id="root">
         </div>
     </div>
 
