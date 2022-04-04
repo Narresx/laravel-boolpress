@@ -1,6 +1,6 @@
 <template>
 <main>
-    <div class="container">
+    <div class="container mx-auto">
         <PostsList />
     </div>
 </main>

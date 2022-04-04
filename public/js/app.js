@@ -1962,7 +1962,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/posts").then(function (res) {
-        _this.posts = res.data.results; // console.log(res);
+        _this.posts = res.data.results;
       })["catch"](function (err) {
         console.error(err);
       }).then(function () {
@@ -37564,7 +37564,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c("div", { staticClass: "container" }, [_c("PostsList")], 1),
+    _c("div", { staticClass: "container mx-auto" }, [_c("PostsList")], 1),
   ])
 }
 var staticRenderFns = []
@@ -37589,34 +37589,43 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "section",
+    { staticClass: "row" },
+    _vm._l(_vm.posts, function (post) {
+      return _c(
+        "div",
+        {
+          key: post.id,
+          staticClass: "card col-4",
+          staticStyle: { width: "18rem" },
+        },
+        [
+          _c("img", {
+            staticClass: "card-img-top",
+            attrs: { src: "", alt: "" },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(_vm._s(post.title)),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(post.content)),
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+              _vm._v("Go somewhere"),
+            ]),
+          ]),
+        ]
+      )
+    }),
+    0
+  )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", [
-      _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
-        _c("img", { staticClass: "card-img-top", attrs: { src: "", alt: "" } }),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(
-              "Some quick example text to build on the card title and make up the bulk of the card's content."
-            ),
-          ]),
-          _vm._v(" "),
-          _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-            _vm._v("Go somewhere"),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
