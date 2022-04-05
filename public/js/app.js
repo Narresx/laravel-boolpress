@@ -37602,19 +37602,31 @@ var render = function () {
             attrs: { src: "", alt: "" },
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(post.title)),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(post.content)),
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-              _vm._v("Go somewhere"),
-            ]),
-          ]),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(post.title)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(post.content)),
+              ]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: {
+                    to: { name: "post-detail", params: { id: post.id } },
+                  },
+                },
+                [_vm._v("Details")]
+              ),
+            ],
+            1
+          ),
         ]
       )
     }),
