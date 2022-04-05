@@ -37826,12 +37826,7 @@ var render = function () {
                 _vm._v(" "),
                 _c(
                   "router-link",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: {
-                      to: { name: "post-detail", params: { id: _vm.post.id } },
-                    },
-                  },
+                  { staticClass: "btn btn-primary", attrs: { to: "/" } },
                   [_vm._v("Indietro")]
                 ),
               ],
