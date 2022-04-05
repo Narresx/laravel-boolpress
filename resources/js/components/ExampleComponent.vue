@@ -1,8 +1,6 @@
 <template>
 <main>
-    <div class="container mx-auto">
-        <PostsList />
-    </div>
+    <router-view></router-view>
 </main>
 </template>
 
