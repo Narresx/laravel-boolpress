@@ -2020,12 +2020,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostDetailPage",
+  data: function data() {
+    return {
+      post: {} // Devo salvare il post prima di poter usare i suoi dati
+
+    };
+  },
   methods: {
     getPost: function getPost() {
       var _this = this;
 
-      axios.get("/api/posts/" + this.route.results.id).then(function (res) {
-        _this.posts = res.data.results;
+      axios.get("/api/posts/" + this.$route.params.id).then(function (res) {
+        console.log(res.data);
+        _this.post = res.data;
       })["catch"](function (err) {
         console.error(err);
       }).then(function () {
@@ -37792,39 +37799,48 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h3", [_vm._v("Dettaglio Post")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "card col-4", staticStyle: { width: "18rem" } }, [
-      _c("img", { staticClass: "card-img-top", attrs: { src: "", alt: "" } }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "card-body" },
-        [
-          _c("h5", { staticClass: "card-title" }, [
-            _vm._v(_vm._s(_vm.post.title)),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(_vm._s(_vm.post.content)),
-          ]),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-primary",
-              attrs: {
-                to: { name: "post-detail", params: { id: _vm.post.id } },
-              },
-            },
-            [_vm._v("Details")]
-          ),
-        ],
-        1
-      ),
-    ]),
-  ])
+  return _vm.post
+    ? _c("div", { staticClass: "container" }, [
+        _c("h3", [_vm._v("Dettaglio Post")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "card col-4", staticStyle: { width: "18rem" } },
+          [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "", alt: "" },
+            }),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "card-body" },
+              [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(_vm.post.title)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v(_vm._s(_vm.post.content)),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: {
+                      to: { name: "post-detail", params: { id: _vm.post.id } },
+                    },
+                  },
+                  [_vm._v("Indietro")]
+                ),
+              ],
+              1
+            ),
+          ]
+        ),
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
