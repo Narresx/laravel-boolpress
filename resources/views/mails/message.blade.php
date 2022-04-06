@@ -1,8 +1,8 @@
 @component('mail::message')
     # Introduction
 
-    <p>{{ contact['email'] }}</p>
-    <p>{{ contact['message'] }}</p>
+    ** {{ $contact['email'] }}**
+    ** {{ $contact['message'] }}**
 
 
     @component('mail::button', ['url' => ''])
