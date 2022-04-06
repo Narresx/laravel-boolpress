@@ -1942,6 +1942,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactPage"
 });
@@ -37717,7 +37731,61 @@ var staticRenderFns = [
     return _c("div", { staticClass: "container" }, [
       _c("h3", [_vm._v("Contattaci")]),
       _vm._v(" "),
-      _c("p", [_vm._v("lorem ipsum ad\r\n    ")]),
+      _c("form", [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "exampleInputEmail1" } }, [
+            _vm._v("Email address"),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "email",
+              id: "exampleInputEmail1",
+              "aria-describedby": "emailHelp",
+            },
+          }),
+          _vm._v(" "),
+          _c(
+            "small",
+            { staticClass: "form-text text-muted", attrs: { id: "emailHelp" } },
+            [_vm._v("We'll never share your email with anyone else.")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "exampleInputPassword1" } }, [
+            _vm._v("Password"),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: { type: "password", id: "exampleInputPassword1" },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group form-check" }, [
+          _c("input", {
+            staticClass: "form-check-input",
+            attrs: { type: "checkbox", id: "exampleCheck1" },
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "form-check-label",
+              attrs: { for: "exampleCheck1" },
+            },
+            [_vm._v("Check me out")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        ),
+      ]),
     ])
   },
 ]
