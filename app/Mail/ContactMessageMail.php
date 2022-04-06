@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
+
 class ContactMessageMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -29,6 +30,8 @@ class ContactMessageMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mails.massage')->with(['contact'=>$this->contact]);
+        return $this->from($this->contact['email'])
+        ->markdown('mails.massages')
+        ->with(['contact'=> $this->contact]);
     }
 }
